@@ -17,6 +17,7 @@
 		3F5640552503730C00696E49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5640532503730C00696E49 /* LaunchScreen.storyboard */; };
 		3F5640602503730D00696E49 /* iOSweepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56405F2503730D00696E49 /* iOSweepTests.swift */; };
 		3F56406B2503730D00696E49 /* iOSweepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56406A2503730D00696E49 /* iOSweepUITests.swift */; };
+		3FE4D52D250409DD00DD43C8 /* Tiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FE4D52C250409DC00DD43C8 /* Tiles.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3F5640662503730D00696E49 /* iOSweepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSweepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F56406A2503730D00696E49 /* iOSweepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSweepUITests.swift; sourceTree = "<group>"; };
 		3F56406C2503730D00696E49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FE4D52C250409DC00DD43C8 /* Tiles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tiles.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				3F5640442503730700696E49 /* AppDelegate.swift */,
-				3F5640462503730700696E49 /* GameScene.sks */,
+				3FE4D52C250409DC00DD43C8 /* Tiles.sks */,
 				3F5640482503730700696E49 /* Actions.sks */,
+				3F5640462503730700696E49 /* GameScene.sks */,
 				3F56404A2503730700696E49 /* GameScene.swift */,
 				3F56404C2503730700696E49 /* GameViewController.swift */,
 				3F56404E2503730700696E49 /* Main.storyboard */,
@@ -241,6 +244,7 @@
 				3F5640502503730700696E49 /* Main.storyboard in Resources */,
 				3F5640472503730700696E49 /* GameScene.sks in Resources */,
 				3F5640522503730C00696E49 /* Assets.xcassets in Resources */,
+				3FE4D52D250409DD00DD43C8 /* Tiles.sks in Resources */,
 				3F5640552503730C00696E49 /* LaunchScreen.storyboard in Resources */,
 				3F5640492503730700696E49 /* Actions.sks in Resources */,
 			);
@@ -445,6 +449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YLX9LXB8Y6;
 				INFOPLIST_FILE = iOSweep/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,6 +468,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YLX9LXB8Y6;
 				INFOPLIST_FILE = iOSweep/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
