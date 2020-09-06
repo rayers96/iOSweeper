@@ -16,8 +16,9 @@ class GameScene: SKScene {
   
   override func didMove(to view: SKView) {
     
-    // Get tileMap node from scene and store it for use later
+    // Get tileMap node from scene and fill with default texture
     self.map = self.childNode(withName: "//tileMap") as? SKTileMapNode
+    map?.fill(with: map?.tileSet.tileGroups[0])
     
     // Create shape node to use during mouse interaction
     let w = (self.size.width + self.size.height) * 0.05
