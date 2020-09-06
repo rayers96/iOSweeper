@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0791F3250553BD002C22CD /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0791ED250553BD002C22CD /* GamePresenter.swift */; };
+		3F0791F6250553BD002C22CD /* GameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0791F0250553BD002C22CD /* GameModels.swift */; };
+		3F0791F7250553BD002C22CD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0791F1250553BD002C22CD /* GameViewController.swift */; };
+		3F0791F8250553BD002C22CD /* GameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0791F2250553BD002C22CD /* GameInteractor.swift */; };
 		3F5640452503730700696E49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5640442503730700696E49 /* AppDelegate.swift */; };
 		3F5640472503730700696E49 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F5640462503730700696E49 /* GameScene.sks */; };
-		3F5640492503730700696E49 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F5640482503730700696E49 /* Actions.sks */; };
 		3F56404B2503730700696E49 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56404A2503730700696E49 /* GameScene.swift */; };
-		3F56404D2503730700696E49 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56404C2503730700696E49 /* GameViewController.swift */; };
 		3F5640502503730700696E49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F56404E2503730700696E49 /* Main.storyboard */; };
 		3F5640522503730C00696E49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5640512503730C00696E49 /* Assets.xcassets */; };
-		3F5640552503730C00696E49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5640532503730C00696E49 /* LaunchScreen.storyboard */; };
 		3F5640602503730D00696E49 /* iOSweepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56405F2503730D00696E49 /* iOSweepTests.swift */; };
 		3F56406B2503730D00696E49 /* iOSweepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56406A2503730D00696E49 /* iOSweepUITests.swift */; };
 		3FE4D52D250409DD00DD43C8 /* Tiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FE4D52C250409DC00DD43C8 /* Tiles.sks */; };
@@ -38,15 +39,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F0791ED250553BD002C22CD /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
+		3F0791F0250553BD002C22CD /* GameModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModels.swift; sourceTree = "<group>"; };
+		3F0791F1250553BD002C22CD /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		3F0791F2250553BD002C22CD /* GameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInteractor.swift; sourceTree = "<group>"; };
 		3F5640412503730700696E49 /* iOSweep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSweep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5640442503730700696E49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F5640462503730700696E49 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		3F5640482503730700696E49 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		3F56404A2503730700696E49 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		3F56404C2503730700696E49 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		3F56404F2503730700696E49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F5640512503730C00696E49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3F5640542503730C00696E49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F5640562503730C00696E49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F56405B2503730D00696E49 /* iOSweepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSweepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F56405F2503730D00696E49 /* iOSweepTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSweepTests.swift; sourceTree = "<group>"; };
@@ -82,6 +84,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F0791F9250555C2002C22CD /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				3FE4D52C250409DC00DD43C8 /* Tiles.sks */,
+				3F5640462503730700696E49 /* GameScene.sks */,
+				3F56404A2503730700696E49 /* GameScene.swift */,
+				3F0791F0250553BD002C22CD /* GameModels.swift */,
+				3F0791F1250553BD002C22CD /* GameViewController.swift */,
+				3F0791F2250553BD002C22CD /* GameInteractor.swift */,
+				3F0791ED250553BD002C22CD /* GamePresenter.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 		3F5640382503730700696E49 = {
 			isa = PBXGroup;
 			children = (
@@ -105,15 +121,10 @@
 		3F5640432503730700696E49 /* iOSweep */ = {
 			isa = PBXGroup;
 			children = (
+				3F0791F9250555C2002C22CD /* Game */,
 				3F5640442503730700696E49 /* AppDelegate.swift */,
-				3FE4D52C250409DC00DD43C8 /* Tiles.sks */,
-				3F5640482503730700696E49 /* Actions.sks */,
-				3F5640462503730700696E49 /* GameScene.sks */,
-				3F56404A2503730700696E49 /* GameScene.swift */,
-				3F56404C2503730700696E49 /* GameViewController.swift */,
 				3F56404E2503730700696E49 /* Main.storyboard */,
 				3F5640512503730C00696E49 /* Assets.xcassets */,
-				3F5640532503730C00696E49 /* LaunchScreen.storyboard */,
 				3F5640562503730C00696E49 /* Info.plist */,
 			);
 			path = iOSweep;
@@ -245,8 +256,6 @@
 				3F5640472503730700696E49 /* GameScene.sks in Resources */,
 				3F5640522503730C00696E49 /* Assets.xcassets in Resources */,
 				3FE4D52D250409DD00DD43C8 /* Tiles.sks in Resources */,
-				3F5640552503730C00696E49 /* LaunchScreen.storyboard in Resources */,
-				3F5640492503730700696E49 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +280,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F0791F3250553BD002C22CD /* GamePresenter.swift in Sources */,
 				3F56404B2503730700696E49 /* GameScene.swift in Sources */,
-				3F56404D2503730700696E49 /* GameViewController.swift in Sources */,
+				3F0791F8250553BD002C22CD /* GameInteractor.swift in Sources */,
+				3F0791F7250553BD002C22CD /* GameViewController.swift in Sources */,
+				3F0791F6250553BD002C22CD /* GameModels.swift in Sources */,
 				3F5640452503730700696E49 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,14 +327,6 @@
 				3F56404F2503730700696E49 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3F5640532503730C00696E49 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3F5640542503730C00696E49 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -449,7 +453,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YLX9LXB8Y6;
 				INFOPLIST_FILE = iOSweep/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,7 +472,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YLX9LXB8Y6;
 				INFOPLIST_FILE = iOSweep/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
