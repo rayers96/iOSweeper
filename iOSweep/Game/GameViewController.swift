@@ -21,7 +21,7 @@ protocol GameDisplayLogic: class
 class GameViewController: UIViewController, GameDisplayLogic
 {
   var interactor: GameBusinessLogic?
-
+  
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -40,12 +40,14 @@ class GameViewController: UIViewController, GameDisplayLogic
   
   private func setup()
   {
+    // template
     let viewController = self
     let interactor = GameInteractor()
     let presenter = GamePresenter()
     viewController.interactor = interactor
     interactor.presenter = presenter
     presenter.viewController = viewController
+    
   }
   
   // MARK: View lifecycle
@@ -54,23 +56,16 @@ class GameViewController: UIViewController, GameDisplayLogic
   {
     super.viewDidLoad()
     
-    if let view = self.view as! SKView? {
-      // Load the SKScene from 'GameScene.sks'
-      if let scene = SKScene(fileNamed: "GameScene") {
-        // Set the scale mode to scale to fit the window
-        scene.scaleMode = .aspectFill
-        // Fill map with stone
-        let map = scene.childNode(withName: "//tileMap") as? SKTileMapNode
-        map?.fill(with: map?.tileSet.tileGroups[0])
-        // Present the scene
-        view.presentScene(scene)
-      }
-    }
+    // Display tile map filled w/ stone
+    let sview = self.view as! SKView
+    let scene = SKScene(fileNamed: "GameScene")!
+    scene.scaleMode = .aspectFill
+    let map = scene.childNode(withName: "//tileMap") as! SKTileMapNode
+    map.fill(with: map.tileSet.tileGroups[0])
+    sview.presentScene(scene)
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    let touch = touches.first!
-    let location = touch.location(in: self.view)
   }
   
   // MARK: Do something
