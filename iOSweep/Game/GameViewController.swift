@@ -54,19 +54,23 @@ class GameViewController: UIViewController, GameDisplayLogic
   {
     super.viewDidLoad()
     
-    // From OLD VC
     if let view = self.view as! SKView? {
       // Load the SKScene from 'GameScene.sks'
       if let scene = SKScene(fileNamed: "GameScene") {
         // Set the scale mode to scale to fit the window
         scene.scaleMode = .aspectFill
+        // Fill map with stone
+        let map = scene.childNode(withName: "//tileMap") as? SKTileMapNode
+        map?.fill(with: map?.tileSet.tileGroups[0])
         // Present the scene
         view.presentScene(scene)
       }
-      view.ignoresSiblingOrder = true
-      view.showsFPS = true
-      view.showsNodeCount = true
     }
+  }
+  
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    let touch = touches.first!
+    let location = touch.location(in: self.view)
   }
   
   // MARK: Do something
