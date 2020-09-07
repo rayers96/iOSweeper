@@ -14,4 +14,11 @@ class Game {
   init() {
     b = Board()
   }
+  
+  func flip(Int x, Int y) {
+  }
+  func flag(Int x, Int y) {
+  }
+  func unflag(Int x, Int y) {
+  }
 }
