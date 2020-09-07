@@ -9,16 +9,38 @@
 import Foundation
 
 class Game {
-  var b : Board
+  private var b : Board
   
   init() {
     b = Board()
   }
   
-  func flip(Int x, Int y) {
+  // Return Response without taking action
+  func get() -> Response {
+    return Response()
   }
-  func flag(Int x, Int y) {
+  func flip(x: Int, y: Int) -> Response {
+    // flip tile logic
+    return Response()
   }
-  func unflag(Int x, Int y) {
+  func flag(x: Int, y: Int) -> Response {
+    // flag tile logic
+    return Response()
+  }
+  func unflag(x: Int, y: Int) -> Response {
+    // unflag tile logic (combine w/ flag)??
+    return Response()
+  }
+  
+  struct Response {
+    var textureMap : [[Int]]?
+    var status : Int?
+    
+    init() {
+      textureMap = Array(repeating: Array(repeating: 0, count: 10), count: 10)
+      status = 0
+      
+      // Generate response
+    }
   }
 }

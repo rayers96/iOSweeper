@@ -10,25 +10,29 @@ import UIKit
 import SpriteKit
 
 class ViewController: UIViewController {
+  private var game : Game! = nil
+  private var map : SKTileMapNode! = nil
   
-  override func viewDidLoad()
-  {
+  override func viewDidLoad() {
     super.viewDidLoad()
-    
-    var g = Game()
-    
-    // Display tile map filled w/ stone
     let sview = self.view as! SKView
     let scene = SKScene(fileNamed: "GameScene")!
     scene.scaleMode = .aspectFill
-    let map = scene.childNode(withName: "//tileMap") as! SKTileMapNode
-    map.fill(with: map.tileSet.tileGroups[0])
+    game = Game()
+    map = scene.childNode(withName: "//tileMap") as? SKTileMapNode
+    
+    updateView(response: game.get())
     sview.presentScene(scene)
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
   }
   
-  private func updateView() {
+  private func updateView(response: Game.Response) {
+    for i in 0...9 {
+      for j in 0...9 {
+        map.setTileGroup(map.tileSet.tileGroups[response.textureMap![i][j]], forColumn: i, row: j)
+      }
+    }
   }
 }
