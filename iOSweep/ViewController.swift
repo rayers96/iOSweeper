@@ -18,27 +18,29 @@ class ViewController: UIViewController {
     let sview = self.view as! SKView
     let scene = SKScene(fileNamed: "GameScene")!
     scene.scaleMode = .aspectFill
-    game = Game()
     map = scene.childNode(withName: "//tileMap") as? SKTileMapNode
-    updateView(response: game.get())
+    game = Game(viewController: self)
     sview.presentScene(scene)
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     let touch = touches.first
-    let location = touch?.location(in: map)
-    updateView(response: game.flip(x: map.tileColumnIndex(fromPosition: location!), y: map.tileRowIndex(fromPosition: location!)))
-  }
-  
-  private func updateView(response: Response) {
-    for i in 0...9 {
-      for j in 0...9 {
-        map.setTileGroup(map.tileSet.tileGroups[response.textureMap[i][j]], forColumn: i, row: j)
-      }
-    }
+    let location = touch!.location(in: map)
+    game.flip(x: map.tileColumnIndex(fromPosition: location), y: map.tileRowIndex(fromPosition: location))
   }
   
   @IBAction func newGame(_ sender: UIButton) {
     viewDidLoad()
+  }
+  
+  func updateView(r: Response) {
+    for i in 0...9 {
+      for j in 0...9 {
+        map.setTileGroup(map.tileSet.tileGroups[r.textureMap[i][j]], forColumn: i, row: j)
+      }
+    }
+    if (r.status != 0) {
+      // Loss/win message
+    }
   }
 }

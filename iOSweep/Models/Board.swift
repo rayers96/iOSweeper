@@ -16,6 +16,8 @@ class Board {
   init() {
     gen()
   }
+  
+  // Helper
 
   private func gen() {
     // Generate mines and inc adjacent tiles
