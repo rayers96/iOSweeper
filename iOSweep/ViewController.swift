@@ -26,6 +26,10 @@ class ViewController: UIViewController {
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    let touch = touches.first
+    let location = touch?.location(in: map)
+    updateView(response: game.flip(x: map.tileColumnIndex(fromPosition: location!), y: map.tileRowIndex(fromPosition: location!)))
+    
   }
   
   private func updateView(response: Game.Response) {

@@ -9,18 +9,14 @@
 import Foundation
 
 class Board {
-  private var b : [[Tile]] = Array(repeating: Array(repeating: Tile(), count: 10), count: 10)
+  var b : [[Tile]] = Array(repeating: Array(repeating: Tile(), count: 10), count: 10)
   let size : Int = 10
   let mines : Int = 20
   
   init() {
     gen()
   }
-  
-  func tileAt(x: Int, y: Int) -> Tile {
-    return b[x][y]
-  }
-  
+
   private func gen() {
     // Generate mines and inc adjacent tiles
     var a = [Int](repeating: 0, count: size*size)
