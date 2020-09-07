@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     scene.scaleMode = .aspectFill
     game = Game()
     map = scene.childNode(withName: "//tileMap") as? SKTileMapNode
-    
     updateView(response: game.get())
     sview.presentScene(scene)
   }
@@ -29,14 +28,17 @@ class ViewController: UIViewController {
     let touch = touches.first
     let location = touch?.location(in: map)
     updateView(response: game.flip(x: map.tileColumnIndex(fromPosition: location!), y: map.tileRowIndex(fromPosition: location!)))
-    
   }
   
-  private func updateView(response: Game.Response) {
+  private func updateView(response: Response) {
     for i in 0...9 {
       for j in 0...9 {
         map.setTileGroup(map.tileSet.tileGroups[response.textureMap[i][j]], forColumn: i, row: j)
       }
     }
+  }
+  
+  @IBAction func newGame(_ sender: UIButton) {
+    viewDidLoad()
   }
 }

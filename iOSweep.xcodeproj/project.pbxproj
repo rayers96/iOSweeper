@@ -14,6 +14,7 @@
 		3F5640522503730C00696E49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5640512503730C00696E49 /* Assets.xcassets */; };
 		3F5640602503730D00696E49 /* iOSweepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56405F2503730D00696E49 /* iOSweepTests.swift */; };
 		3F56406B2503730D00696E49 /* iOSweepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56406A2503730D00696E49 /* iOSweepUITests.swift */; };
+		3F7865F32506A98100C2F105 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7865F22506A98100C2F105 /* Response.swift */; };
 		3FE4D52D250409DD00DD43C8 /* Tiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FE4D52C250409DC00DD43C8 /* Tiles.sks */; };
 		3FEFCFFA2505C27D00905411 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFCFF92505C27D00905411 /* Tile.swift */; };
 		3FEFCFFD2505C3F800905411 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFCFFC2505C3F800905411 /* Board.swift */; };
@@ -51,6 +52,7 @@
 		3F5640662503730D00696E49 /* iOSweepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSweepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F56406A2503730D00696E49 /* iOSweepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSweepUITests.swift; sourceTree = "<group>"; };
 		3F56406C2503730D00696E49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F7865F22506A98100C2F105 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		3FE4D52C250409DC00DD43C8 /* Tiles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tiles.sks; sourceTree = "<group>"; };
 		3FEFCFF92505C27D00905411 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		3FEFCFFC2505C3F800905411 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		3FEFCFFB2505C28000905411 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3F7865F22506A98100C2F105 /* Response.swift */,
 				3FEFCFF92505C27D00905411 /* Tile.swift */,
 				3FEFCFFC2505C3F800905411 /* Board.swift */,
 			);
@@ -281,6 +284,7 @@
 				3FEFCFFF2505CEF800905411 /* Game.swift in Sources */,
 				3FEFCFFA2505C27D00905411 /* Tile.swift in Sources */,
 				3FEFCFFD2505C3F800905411 /* Board.swift in Sources */,
+				3F7865F32506A98100C2F105 /* Response.swift in Sources */,
 				3F5640452503730700696E49 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
