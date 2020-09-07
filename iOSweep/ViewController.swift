@@ -31,7 +31,7 @@ class ViewController: UIViewController {
   private func updateView(response: Game.Response) {
     for i in 0...9 {
       for j in 0...9 {
-        map.setTileGroup(map.tileSet.tileGroups[response.textureMap![i][j]], forColumn: i, row: j)
+        map.setTileGroup(map.tileSet.tileGroups[response.textureMap[i][j]], forColumn: i, row: j)
       }
     }
   }

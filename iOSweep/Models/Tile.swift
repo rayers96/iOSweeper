@@ -8,16 +8,9 @@
 
 import Foundation
 
-class Tile {
-  var mine : Bool
-  var flipped : Bool
-  var flagged : Bool
-  var adj : Int
-  
-  init() {
-    mine = false;
-    flipped = false;
-    flagged = false;
-    adj = 0;
-  }
+struct Tile {
+  var mine : Bool = false
+  var flipped : Bool = false
+  var flagged : Bool = false
+  var adj : Int = 0
 }
