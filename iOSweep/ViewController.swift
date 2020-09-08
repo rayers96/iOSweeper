@@ -33,12 +33,14 @@ class ViewController: UIViewController {
     game.flip(x: x, y: y)
   }
   @IBAction func longPressed(_ sender: UILongPressGestureRecognizer) {
-    let location = sender.location(in: sender.view)
-    let locationInScene = scene.convertPoint(fromView: location)
-    let locationInNode = scene.convert(locationInScene, to: map)
-    let x = map.tileColumnIndex(fromPosition: locationInNode)
-    let y = map.tileRowIndex(fromPosition: locationInNode)
-    game.toggleFlag(x: x, y: y)
+    if (sender.state == UIGestureRecognizer.State.began) {
+      let location = sender.location(in: sender.view)
+      let locationInScene = scene.convertPoint(fromView: location)
+      let locationInNode = scene.convert(locationInScene, to: map)
+      let x = map.tileColumnIndex(fromPosition: locationInNode)
+      let y = map.tileRowIndex(fromPosition: locationInNode)
+      game.toggleFlag(x: x, y: y)
+    }
   }
   @IBAction func newGame(_ sender: UIButton) {
     viewDidLoad()
