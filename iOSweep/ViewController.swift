@@ -10,25 +10,36 @@ import UIKit
 import SpriteKit
 
 class ViewController: UIViewController {
-  private var game : Game! = nil
+  private var scene : SKScene! = nil
   private var map : SKTileMapNode! = nil
+  private var game : Game! = nil
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    let sview = self.view as! SKView
-    let scene = SKScene(fileNamed: "GameScene")!
+    let v = self.view as! SKView
+    scene = SKScene(fileNamed: "GameScene")!
     scene.scaleMode = .aspectFill
     map = scene.childNode(withName: "//tileMap") as? SKTileMapNode
     game = Game(viewController: self)
-    sview.presentScene(scene)
+    v.presentScene(scene)
   }
   
-  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    let touch = touches.first
-    let location = touch!.location(in: map)
-    game.flip(x: map.tileColumnIndex(fromPosition: location), y: map.tileRowIndex(fromPosition: location))
+  @IBAction func tapped(_ sender: UITapGestureRecognizer) {
+    let location = sender.location(in: sender.view)
+    let locationInScene = scene.convertPoint(fromView: location)
+    let locationInNode = scene.convert(locationInScene, to: map)
+    let x = map.tileColumnIndex(fromPosition: locationInNode)
+    let y = map.tileRowIndex(fromPosition: locationInNode)
+    game.flip(x: x, y: y)
   }
-  
+  @IBAction func longPressed(_ sender: UILongPressGestureRecognizer) {
+    let location = sender.location(in: sender.view)
+    let locationInScene = scene.convertPoint(fromView: location)
+    let locationInNode = scene.convert(locationInScene, to: map)
+    let x = map.tileColumnIndex(fromPosition: locationInNode)
+    let y = map.tileRowIndex(fromPosition: locationInNode)
+    game.toggleFlag(x: x, y: y)
+  }
   @IBAction func newGame(_ sender: UIButton) {
     viewDidLoad()
   }
