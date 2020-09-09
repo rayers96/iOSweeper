@@ -14,37 +14,37 @@ class ViewController: UIViewController {
   private var map : SKTileMapNode! = nil
   private var game : Game! = nil
   
+  @IBOutlet weak var skView: SKView!
+  @IBOutlet weak var statusMessage: UILabel!
+  @IBOutlet weak var playAgain: UIButton!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    let v = self.view as! SKView
     scene = SKScene(fileNamed: "GameScene")!
-    scene.scaleMode = .aspectFill
+    scene.scaleMode = .aspectFit
     scene.backgroundColor = .systemGray5
     map = scene.childNode(withName: "//tileMap") as? SKTileMapNode
     game = Game(viewController: self)
-    v.presentScene(scene)
+    skView.presentScene(self.scene)
   }
   
+  
   @IBAction func tapped(_ sender: UITapGestureRecognizer) {
-    let location = sender.location(in: sender.view)
+    let location = sender.location(in: skView)
     let locationInScene = scene.convertPoint(fromView: location)
-    let locationInNode = scene.convert(locationInScene, to: map)
-    let x = map.tileColumnIndex(fromPosition: locationInNode)
-    let y = map.tileRowIndex(fromPosition: locationInNode)
+    let x = map.tileColumnIndex(fromPosition: locationInScene)
+    let y = map.tileRowIndex(fromPosition: locationInScene)
     game.flip(x: x, y: y)
   }
   @IBAction func longPressed(_ sender: UILongPressGestureRecognizer) {
     if (sender.state == UIGestureRecognizer.State.began) {
-      let location = sender.location(in: sender.view)
+      let location = sender.location(in: skView)
       let locationInScene = scene.convertPoint(fromView: location)
-      let locationInNode = scene.convert(locationInScene, to: map)
-      let x = map.tileColumnIndex(fromPosition: locationInNode)
-      let y = map.tileRowIndex(fromPosition: locationInNode)
+      let x = map.tileColumnIndex(fromPosition: locationInScene)
+      let y = map.tileRowIndex(fromPosition: locationInScene)
       game.toggleFlag(x: x, y: y)
     }
   }
-  @IBOutlet weak var statusMessage: UILabel!
-  @IBOutlet weak var playAgain: UIButton!
   @IBAction func newGame(_ sender: UIButton) {
     viewDidLoad()
   }
