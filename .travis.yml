@@ -1,4 +1,5 @@
-name: Swift
+language: swift
+name: .travis
 
 on:
   push:
