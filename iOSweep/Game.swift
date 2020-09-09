@@ -21,6 +21,7 @@ class Game {
     flips = 0
     flags = 0
     self.viewController = viewController
+    gen()
     respond()
   }
   
@@ -79,13 +80,12 @@ class Game {
   }
   
   // Helper
-  
+
   private func validateXY(x: Int, y: Int) -> Bool {
     let validX = x >= 0 && x < board.size
     let validY = y >= 0 && y < board.size
     return (validX && validY)
   }
-  
   private func flipAdj(x: Int, y: Int) {
     for i in (x-1)...(x+1) {
       for j in (y-1)...(y+1) {
@@ -101,6 +101,34 @@ class Game {
               flipAdj(x: i, y: j)
             }
           }
+        }
+      }
+    }
+  }
+  
+  // Generation
+  
+  private func gen() {
+    // Generate mines and inc adjacent tiles
+    var a = [Int](repeating: 0, count: board.size*board.size)
+    for i in 0...(board.size*board.size) - 1 {
+      a[i] = i
+    }
+    a.shuffle()
+    for i in 0...board.mines-1 {
+      let x = a[i] % board.size
+      let y = a[i] / board.size
+      board.b[x][y].mine = true
+      incAdj(x: x, y: y)
+    }
+  }
+  private func incAdj(x: Int, y: Int) {
+    for i in (x-1)...(x+1) {
+      for j in (y-1)...(y+1) {
+        let validI = i >= 0 && i < board.size
+        let validJ = j >= 0 && j < board.size
+        if (validI && validJ && (i != x || y != j)) {
+          board.b[i][j].adj += 1
         }
       }
     }

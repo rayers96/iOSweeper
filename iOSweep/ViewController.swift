@@ -25,9 +25,8 @@ class ViewController: UIViewController {
     scene.backgroundColor = .systemGray5
     map = scene.childNode(withName: "//tileMap") as? SKTileMapNode
     game = Game(viewController: self)
-    skView.presentScene(self.scene)
+    skView.presentScene(scene)
   }
-  
   
   @IBAction func tapped(_ sender: UITapGestureRecognizer) {
     let location = sender.location(in: skView)
