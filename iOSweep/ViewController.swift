@@ -42,18 +42,30 @@ class ViewController: UIViewController {
       game.toggleFlag(x: x, y: y)
     }
   }
+  @IBOutlet weak var statusMessage: UILabel!
+  @IBOutlet weak var playAgain: UIButton!
   @IBAction func newGame(_ sender: UIButton) {
     viewDidLoad()
   }
   
+  // Invoked by Game
   func updateView(r: Response) {
     for i in 0...9 {
       for j in 0...9 {
         map.setTileGroup(map.tileSet.tileGroups[r.textureMap[i][j]], forColumn: i, row: j)
       }
     }
-    if (r.status != 0) {
-      // Loss/win message
+    if (r.status == -1) {
+      statusMessage.text = "Game over!"
+      statusMessage.isHidden = false
+      playAgain.isHidden = false
+    } else if (r.status == 1) {
+      statusMessage.text = "You win!"
+      statusMessage.isHidden = false
+      playAgain.isHidden = false
+    } else {
+      statusMessage.isHidden = true
+      playAgain.isHidden = true
     }
   }
 }

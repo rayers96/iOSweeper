@@ -23,22 +23,30 @@
                                 <color key="shadowColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="0.0" height="6"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Db5-Ra-CK9">
-                                <rect key="frame" x="116" y="599" width="143" height="48"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Db5-Ra-CK9">
+                                <rect key="frame" x="121.5" y="599" width="132" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="New Game">
+                                <state key="normal" title="Play again">
                                     <color key="titleColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="newGame:" destination="BV1-FR-VrT" eventType="primaryActionTriggered" id="q2L-qO-vbL"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StatusMessage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNr-Uu-J4S">
+                                <rect key="frame" x="32" y="532" width="311" height="57"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.14901961389999999" green="0.14901961389999999" blue="0.14901961389999999" alpha="1" colorSpace="deviceRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="d90-20-Grv" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" id="4sf-GY-oD4"/>
                             <constraint firstItem="Db5-Ra-CK9" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="5Ne-1F-jpJ"/>
+                            <constraint firstItem="Db5-Ra-CK9" firstAttribute="top" secondItem="MNr-Uu-J4S" secondAttribute="bottom" constant="10" id="Veu-cE-Fa1"/>
+                            <constraint firstItem="MNr-Uu-J4S" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="YLQ-iO-69f"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="Db5-Ra-CK9" secondAttribute="bottom" constant="20" id="kkF-Be-T2M"/>
                             <constraint firstItem="d90-20-Grv" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="mD0-cK-GT7"/>
                         </constraints>
@@ -48,6 +56,10 @@
                             <outletCollection property="gestureRecognizers" destination="ifc-an-7d9" appends="YES" id="RRb-ib-g94"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="playAgain" destination="Db5-Ra-CK9" id="wmB-cb-JGQ"/>
+                        <outlet property="statusMessage" destination="MNr-Uu-J4S" id="wNw-Xv-RPc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="6fb-yO-tGN">
