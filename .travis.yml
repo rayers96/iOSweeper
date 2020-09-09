@@ -1,4 +1,8 @@
 language: swift
+xcode_project: iOSweep.xcodeproj # path to your xcodeproj folder
+xcode_scheme: iOSweep
+xcode_destination: platform=iOS Simulator,OS=13.7,name=iPad Pro (9.7-inch)
+
 name: .travis
 
 on:
