@@ -54,10 +54,6 @@ class Game {
       respond()
     }
   }
-  // Return Response without taking action
-  func get() {
-    respond()
-  }
   
   // Generate response and update viewController
   private func respond() {
@@ -79,7 +75,7 @@ class Game {
     viewController.updateView(r: response)
   }
   
-  // Helper
+  // Helpers
 
   private func validateXY(x: Int, y: Int) -> Bool {
     let validX = x >= 0 && x < board.size

@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     scene = SKScene(fileNamed: "GameScene")!
     scene.scaleMode = .aspectFit
-    scene.backgroundColor = .systemGray5
     map = scene.childNode(withName: "//tileMap") as? SKTileMapNode
     game = Game(viewController: self)
     skView.presentScene(scene)
