@@ -107,13 +107,12 @@
 		3F5640432503730700696E49 /* iOSweep */ = {
 			isa = PBXGroup;
 			children = (
-				3FE4D52C250409DC00DD43C8 /* Tiles.sks */,
-				3F5640462503730700696E49 /* GameScene.sks */,
+				3F56404E2503730700696E49 /* Main.storyboard */,
+				3F5640442503730700696E49 /* AppDelegate.swift */,
 				3F0791F1250553BD002C22CD /* ViewController.swift */,
 				3FEFCFFE2505CEF800905411 /* Game.swift */,
 				3FEFCFFB2505C28000905411 /* Models */,
-				3F5640442503730700696E49 /* AppDelegate.swift */,
-				3F56404E2503730700696E49 /* Main.storyboard */,
+				3F9FD338250AB34A00358292 /* SpriteKit */,
 				3F5640512503730C00696E49 /* Assets.xcassets */,
 				3F5640562503730C00696E49 /* Info.plist */,
 			);
@@ -136,6 +135,15 @@
 				3F56406C2503730D00696E49 /* Info.plist */,
 			);
 			path = iOSweepUITests;
+			sourceTree = "<group>";
+		};
+		3F9FD338250AB34A00358292 /* SpriteKit */ = {
+			isa = PBXGroup;
+			children = (
+				3FE4D52C250409DC00DD43C8 /* Tiles.sks */,
+				3F5640462503730700696E49 /* GameScene.sks */,
+			);
+			path = SpriteKit;
 			sourceTree = "<group>";
 		};
 		3FEFCFFB2505C28000905411 /* Models */ = {
@@ -453,7 +461,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YLX9LXB8Y6;
 				INFOPLIST_FILE = iOSweep/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,7 +480,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YLX9LXB8Y6;
 				INFOPLIST_FILE = iOSweep/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

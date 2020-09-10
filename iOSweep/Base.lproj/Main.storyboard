@@ -31,13 +31,13 @@
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOSweeper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljE-f3-e9D">
-                                <rect key="frame" x="21" y="0.0" width="333.5" height="85"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOSweeper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljE-f3-e9D">
+                                <rect key="frame" x="21" y="0.0" width="333.5" height="83"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="66"/>
                                 <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <size key="shadowOffset" width="0.0" height="6"/>
+                                <size key="shadowOffset" width="0.0" height="4"/>
                             </label>
                             <skView contentMode="scaleToFill" sceneName="GameScene.sks" translatesAutoresizingMaskIntoConstraints="NO" id="3uc-LM-ij6">
                                 <rect key="frame" x="0.0" y="146" width="375" height="375"/>
@@ -45,9 +45,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3uc-LM-ij6" secondAttribute="height" multiplier="1:1" id="lJK-Tg-WtE"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="PBV-JT-lLl" appends="YES" id="JG5-9r-uB7"/>
-                                </connections>
                             </skView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -68,7 +65,7 @@
                         <viewLayoutGuide key="safeArea" id="VO5-Uu-tyc"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Rgn-D9-RJC" appends="YES" id="xAl-e7-rnn"/>
-                            <outletCollection property="gestureRecognizers" destination="PBV-JT-lLl" appends="YES" id="CyT-5I-DON"/>
+                            <outletCollection property="gestureRecognizers" destination="lWv-Iz-58q" appends="YES" id="PVT-C2-4Qn"/>
                         </connections>
                     </view>
                     <connections>
@@ -83,9 +80,9 @@
                         <action selector="tapped:" destination="Mou-mN-XL5" id="A0F-hR-TPn"/>
                     </connections>
                 </tapGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="PBV-JT-lLl">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="lWv-Iz-58q">
                     <connections>
-                        <action selector="longPressed:" destination="Mou-mN-XL5" id="Ff3-UQ-hcX"/>
+                        <action selector="longPressed:" destination="Mou-mN-XL5" id="XhK-YO-GsW"/>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>

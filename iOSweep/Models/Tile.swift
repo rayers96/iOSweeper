@@ -6,8 +6,6 @@
 //  Copyright © 2020 Ryan Ayers. All rights reserved.
 //
 
-import Foundation
-
 struct Tile {
   var mine : Bool = false
   var flipped : Bool = false
