@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mou-mN-XL5">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,55 +12,61 @@
             <objects>
                 <viewController title="Main" id="Mou-mN-XL5" customClass="ViewController" customModule="iOSweep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="VOI-Xe-gts">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIz-z4-VXz">
-                                <rect key="frame" x="121.5" y="599" width="132" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Play again">
-                                    <color key="titleColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="newGame:" destination="Mou-mN-XL5" eventType="primaryActionTriggered" id="h8a-CH-gs3"/>
-                                </connections>
-                            </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StatusMessage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uc6-OT-DnV">
-                                <rect key="frame" x="32" y="532" width="311" height="57"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StatusMessage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uc6-OT-DnV">
+                                <rect key="frame" x="48.5" y="665" width="317" height="57"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOSweeper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljE-f3-e9D">
-                                <rect key="frame" x="21" y="0.0" width="333.5" height="83"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOSweeper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ljE-f3-e9D">
+                                <rect key="frame" x="40.5" y="64" width="333" height="83"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="66"/>
                                 <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="0.0" height="4"/>
                             </label>
-                            <skView contentMode="scaleToFill" sceneName="GameScene.sks" translatesAutoresizingMaskIntoConstraints="NO" id="3uc-LM-ij6">
-                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
+                            <skView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="3uc-LM-ij6">
+                                <rect key="frame" x="0.0" y="241" width="414" height="414"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3uc-LM-ij6" secondAttribute="height" multiplier="1:1" id="lJK-Tg-WtE"/>
                                 </constraints>
                             </skView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIz-z4-VXz">
+                                <rect key="frame" x="16" y="732" width="382" height="48"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="newGame:" destination="Mou-mN-XL5" eventType="primaryActionTriggered" id="h8a-CH-gs3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="ljE-f3-e9D" firstAttribute="top" secondItem="VO5-Uu-tyc" secondAttribute="top" id="Bsi-gs-rPt"/>
                             <constraint firstItem="uc6-OT-DnV" firstAttribute="centerX" secondItem="VOI-Xe-gts" secondAttribute="centerX" id="HBF-A7-1vM"/>
-                            <constraint firstItem="TIz-z4-VXz" firstAttribute="top" secondItem="uc6-OT-DnV" secondAttribute="bottom" constant="10" id="MOg-bw-HR9"/>
+                            <constraint firstItem="ljE-f3-e9D" firstAttribute="top" secondItem="VO5-Uu-tyc" secondAttribute="top" constant="20" id="UvL-K9-JWP"/>
                             <constraint firstItem="3uc-LM-ij6" firstAttribute="centerY" secondItem="VOI-Xe-gts" secondAttribute="centerY" id="Xsz-lI-qsw"/>
-                            <constraint firstItem="TIz-z4-VXz" firstAttribute="centerX" secondItem="VOI-Xe-gts" secondAttribute="centerX" id="Ygh-od-RQ5"/>
                             <constraint firstItem="3uc-LM-ij6" firstAttribute="leading" secondItem="VO5-Uu-tyc" secondAttribute="leading" id="ZaW-YN-rVh"/>
                             <constraint firstItem="3uc-LM-ij6" firstAttribute="centerX" secondItem="VOI-Xe-gts" secondAttribute="centerX" id="a0d-Hx-FUX"/>
+                            <constraint firstItem="uc6-OT-DnV" firstAttribute="top" secondItem="3uc-LM-ij6" secondAttribute="bottom" constant="10" id="aIB-MG-gPI"/>
                             <constraint firstItem="ljE-f3-e9D" firstAttribute="centerX" secondItem="VOI-Xe-gts" secondAttribute="centerX" id="bpE-uc-66l"/>
                             <constraint firstItem="3uc-LM-ij6" firstAttribute="trailing" secondItem="VO5-Uu-tyc" secondAttribute="trailing" id="gEq-l1-C8t"/>
-                            <constraint firstItem="ljE-f3-e9D" firstAttribute="top" secondItem="VO5-Uu-tyc" secondAttribute="top" id="gmN-3z-m3P"/>
-                            <constraint firstItem="VO5-Uu-tyc" firstAttribute="bottom" secondItem="TIz-z4-VXz" secondAttribute="bottom" constant="20" id="rHR-DL-zde"/>
+                            <constraint firstItem="TIz-z4-VXz" firstAttribute="leading" secondItem="VO5-Uu-tyc" secondAttribute="leading" constant="16" id="mVg-yU-d9z" userLabel="Play Again.leading = leadingMargin"/>
+                            <constraint firstItem="TIz-z4-VXz" firstAttribute="top" secondItem="uc6-OT-DnV" secondAttribute="bottom" constant="10" id="rpA-H3-MXm"/>
+                            <constraint firstItem="VO5-Uu-tyc" firstAttribute="trailing" secondItem="TIz-z4-VXz" secondAttribute="trailing" constant="16" id="zIJ-wU-8e5" userLabel="Play Again.trailing = trailingMargin"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VO5-Uu-tyc"/>
                         <connections>

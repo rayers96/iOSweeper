@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F0791F7250553BD002C22CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0791F1250553BD002C22CD /* ViewController.swift */; };
+		3F1AC314250AD643009F60F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1AC313250AD643009F60F6 /* LaunchScreen.storyboard */; };
 		3F5640452503730700696E49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5640442503730700696E49 /* AppDelegate.swift */; };
 		3F5640472503730700696E49 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F5640462503730700696E49 /* GameScene.sks */; };
 		3F5640502503730700696E49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F56404E2503730700696E49 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		3F0791F1250553BD002C22CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F1AC313250AD643009F60F6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F5640412503730700696E49 /* iOSweep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSweep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5640442503730700696E49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F5640462503730700696E49 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		3F5640432503730700696E49 /* iOSweep */ = {
 			isa = PBXGroup;
 			children = (
+				3F1AC313250AD643009F60F6 /* LaunchScreen.storyboard */,
 				3F56404E2503730700696E49 /* Main.storyboard */,
 				3F5640442503730700696E49 /* AppDelegate.swift */,
 				3F0791F1250553BD002C22CD /* ViewController.swift */,
@@ -263,6 +266,7 @@
 				3F5640502503730700696E49 /* Main.storyboard in Resources */,
 				3F5640472503730700696E49 /* GameScene.sks in Resources */,
 				3F5640522503730C00696E49 /* Assets.xcassets in Resources */,
+				3F1AC314250AD643009F60F6 /* LaunchScreen.storyboard in Resources */,
 				3FE4D52D250409DD00DD43C8 /* Tiles.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
