@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3F5640402503730700696E49"
-               BuildableName = "iOSweep.app"
+               BuildableName = "iOSweeper.app"
                BlueprintName = "iOSweep"
                ReferencedContainer = "container:iOSweep.xcodeproj">
             </BuildableReference>
@@ -67,7 +67,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3F5640402503730700696E49"
-            BuildableName = "iOSweep.app"
+            BuildableName = "iOSweeper.app"
             BlueprintName = "iOSweep"
             ReferencedContainer = "container:iOSweep.xcodeproj">
          </BuildableReference>
@@ -84,7 +84,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3F5640402503730700696E49"
-            BuildableName = "iOSweep.app"
+            BuildableName = "iOSweeper.app"
             BlueprintName = "iOSweep"
             ReferencedContainer = "container:iOSweep.xcodeproj">
          </BuildableReference>

@@ -40,16 +40,18 @@ class GameInteractor: GameBusinessLogic {
   // Game logic
   private func flip(x: Int, y: Int) {
     if (validateXY(x: x, y: y)) {
-      if (board.b[x][y].mine) {
-        board.b[x][y].flipped = true
-        status = -1
-      } else if (!board.b[x][y].flipped && !board.b[x][y].flagged) {
-        board.b[x][y].flipped = true
-        flips += 1
-        if ((board.size*board.size) - flips == board.mines) {
-          status = 1
-        } else if (board.b[x][y].adj == 0) {
-          flipAdj(x: x, y: y)
+      if (!board.b[x][y].flagged) {
+        if (board.b[x][y].mine) {
+          board.b[x][y].flipped = true
+          status = -1
+        } else if (!board.b[x][y].flipped) {
+          board.b[x][y].flipped = true
+          flips += 1
+          if ((board.size*board.size) - flips == board.mines) {
+            status = 1
+          } else if (board.b[x][y].adj == 0) {
+            flipAdj(x: x, y: y)
+          }
         }
       }
     }
