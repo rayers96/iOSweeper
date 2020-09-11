@@ -15,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOSweeper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pxp-OY-QFV">
-                                <rect key="frame" x="40.5" y="64" width="333" height="83"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOSweeper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pxp-OY-QFV">
+                                <rect key="frame" x="16" y="64" width="382" height="83"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="66"/>
                                 <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -27,15 +27,17 @@
                         <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="ssa-C6-K5I" firstAttribute="trailing" secondItem="Pxp-OY-QFV" secondAttribute="trailing" constant="16" id="8bo-x9-hQb"/>
                             <constraint firstItem="Pxp-OY-QFV" firstAttribute="top" secondItem="ssa-C6-K5I" secondAttribute="top" constant="20" id="Fm8-z1-7Fm"/>
                             <constraint firstItem="Pxp-OY-QFV" firstAttribute="centerX" secondItem="lHW-Iu-NwX" secondAttribute="centerX" id="qN6-6g-IqS"/>
+                            <constraint firstItem="Pxp-OY-QFV" firstAttribute="leading" secondItem="ssa-C6-K5I" secondAttribute="leading" constant="16" id="upJ-Kb-7jP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssa-C6-K5I"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bj-aV-roO" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.40000000000001" y="99.400299850074973"/>
+            <point key="canvasLocation" x="128.98550724637681" y="99.107142857142847"/>
         </scene>
     </scenes>
 </document>
