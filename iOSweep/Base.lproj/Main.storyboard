@@ -10,7 +10,7 @@
         <!--Main-->
         <scene sceneID="tnf-Na-R84">
             <objects>
-                <viewController title="Main" id="Mou-mN-XL5" customClass="ViewController" customModule="iOSweep" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main" id="Mou-mN-XL5" customClass="GameViewController" customModule="iOSweep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="VOI-Xe-gts">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,7 @@
                                 </constraints>
                             </skView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIz-z4-VXz">
-                                <rect key="frame" x="16" y="585" width="343" height="62"/>
+                                <rect key="frame" x="16" y="585" width="343" height="48"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Play Again">
@@ -49,7 +49,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="newGame:" destination="Mou-mN-XL5" eventType="primaryActionTriggered" id="h8a-CH-gs3"/>
+                                    <action selector="newGame:" destination="Mou-mN-XL5" eventType="touchUpInside" id="ptm-57-MER"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,7 +58,6 @@
                         <constraints>
                             <constraint firstItem="VO5-Uu-tyc" firstAttribute="trailing" secondItem="uc6-OT-DnV" secondAttribute="trailing" constant="16" id="7vN-c5-2zZ"/>
                             <constraint firstItem="TIz-z4-VXz" firstAttribute="top" secondItem="uc6-OT-DnV" secondAttribute="bottom" constant="8" id="9ee-JU-qQf"/>
-                            <constraint firstItem="VO5-Uu-tyc" firstAttribute="bottom" secondItem="TIz-z4-VXz" secondAttribute="bottom" constant="20" id="AKk-RM-cUF"/>
                             <constraint firstItem="ljE-f3-e9D" firstAttribute="leading" secondItem="VO5-Uu-tyc" secondAttribute="leading" constant="16" id="K9X-ib-R5t"/>
                             <constraint firstItem="uc6-OT-DnV" firstAttribute="top" secondItem="3uc-LM-ij6" secondAttribute="bottom" constant="8" id="Om1-go-rfu"/>
                             <constraint firstItem="ljE-f3-e9D" firstAttribute="top" secondItem="VO5-Uu-tyc" secondAttribute="top" constant="20" id="UvL-K9-JWP"/>
@@ -72,28 +71,14 @@
                             <constraint firstItem="VO5-Uu-tyc" firstAttribute="trailing" secondItem="TIz-z4-VXz" secondAttribute="trailing" constant="16" id="zIJ-wU-8e5" userLabel="Play Again.trailing = trailingMargin"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VO5-Uu-tyc"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="Rgn-D9-RJC" appends="YES" id="xAl-e7-rnn"/>
-                            <outletCollection property="gestureRecognizers" destination="lWv-Iz-58q" appends="YES" id="PVT-C2-4Qn"/>
-                        </connections>
                     </view>
                     <connections>
-                        <outlet property="playAgain" destination="TIz-z4-VXz" id="eS0-P3-Owi"/>
-                        <outlet property="skView" destination="3uc-LM-ij6" id="Crz-5j-aEg"/>
-                        <outlet property="statusMessage" destination="uc6-OT-DnV" id="1RB-bk-9lh"/>
+                        <outlet property="playAgain" destination="TIz-z4-VXz" id="LJc-ME-ShG"/>
+                        <outlet property="skView" destination="3uc-LM-ij6" id="CiI-xB-eBC"/>
+                        <outlet property="statusMessage" destination="uc6-OT-DnV" id="zPl-Ex-e59"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXK-WX-Qgz" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Rgn-D9-RJC">
-                    <connections>
-                        <action selector="tapped:" destination="Mou-mN-XL5" id="A0F-hR-TPn"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="lWv-Iz-58q">
-                    <connections>
-                        <action selector="longPressed:" destination="Mou-mN-XL5" id="XhK-YO-GsW"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="128.125" y="98.4375"/>
         </scene>
