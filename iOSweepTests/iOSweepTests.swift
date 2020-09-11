@@ -10,25 +10,32 @@ import XCTest
 @testable import iOSweep
 
 class iOSweepTests: XCTestCase {
-
+  
+  var game : Game! = nil
+  
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+      game = Game()
     }
-
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+      game = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+  
+    func testFlip() throws {
+      let x = Int.random(in: 0...9)
+      let y = Int.random(in: 0...9)
+      let response1 = game.get()
+      XCTAssert(response1.textureMap[x][y] == 9)
+      let response2 = game.flip(x: x, y: y)
+      XCTAssert((0...8).contains(response2.textureMap[x][y]))
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testFlag() throws {
+      let x = Int.random(in: 0...9)
+      let y = Int.random(in: 0...9)
+      let response1 = game.get()
+      XCTAssert(response1.textureMap[x][y] != 10)
+      let response2 = game.toggleFlag(x: x, y: y)
+      XCTAssert(response2.textureMap[x][y] == 10)
+      let response3 = game.toggleFlag(x: x, y: y)
+      XCTAssert(response3.textureMap[x][y] != 10)
     }
-
 }

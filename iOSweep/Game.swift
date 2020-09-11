@@ -7,23 +7,20 @@
 //
 
 class Game {
-  private var viewController : ViewController
   private var board : Board
   private var status : Int // -1 = loss, 0 = continue, 1 = win
   private var flips : Int
   private var flags : Int
   
-  init(viewController: ViewController) {
+  init() {
     board = Board()
     status = 0
     flips = 0
     flags = 0
-    self.viewController = viewController
-    respond()
   }
   
   // Client Interface
-  func flip(x: Int, y: Int) {
+  func flip(x: Int, y: Int) -> Response {
     if (validateXY(x: x, y: y)) {
       if (board.b[x][y].mine) {
         board.b[x][y].flipped = true
@@ -37,10 +34,11 @@ class Game {
           flipAdj(x: x, y: y)
         }
       }
-      respond()
     }
+    let response = Response(board: self.board, status: self.status)
+    return response
   }
-  func toggleFlag(x: Int, y: Int) {
+  func toggleFlag(x: Int, y: Int) -> Response {
     if (validateXY(x: x, y: y)) {
       if (board.b[x][y].flagged) {
         board.b[x][y].flagged = false
@@ -49,8 +47,13 @@ class Game {
         board.b[x][y].flagged = true
         flags += 1
       }
-      respond()
     }
+    let response = Response(board: self.board, status: self.status)
+    return response
+  }
+  func get() -> Response {
+    let response = Response(board: self.board, status: self.status)
+    return response
   }
   
   // Helpers
@@ -77,9 +80,5 @@ class Game {
         }
       }
     }
-  }
-  private func respond() {
-    let response = Response(board: self.board, status: self.status)
-    viewController.updateView(r: response)
   }
 }

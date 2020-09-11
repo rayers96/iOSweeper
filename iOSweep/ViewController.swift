@@ -22,7 +22,9 @@ class ViewController: UIViewController {
     scene = SKScene(fileNamed: "GameScene")!
     scene.scaleMode = .aspectFit
     map = scene.childNode(withName: "//tileMap") as? SKTileMapNode
-    game = Game(viewController: self)
+    game = Game()
+    statusMessage.isHidden = true
+    playAgain.isHidden = true
     skView.presentScene(scene)
   }
   
@@ -31,7 +33,8 @@ class ViewController: UIViewController {
     let locationInScene = scene.convertPoint(fromView: location)
     let x = map.tileColumnIndex(fromPosition: locationInScene)
     let y = map.tileRowIndex(fromPosition: locationInScene)
-    game.flip(x: x, y: y)
+    let response = game.flip(x: x, y: y)
+    updateView(response: response)
   }
   @IBAction func longPressed(_ sender: UILongPressGestureRecognizer) {
     if (sender.state == UIGestureRecognizer.State.began) {
@@ -39,31 +42,31 @@ class ViewController: UIViewController {
       let locationInScene = scene.convertPoint(fromView: location)
       let x = map.tileColumnIndex(fromPosition: locationInScene)
       let y = map.tileRowIndex(fromPosition: locationInScene)
-      game.toggleFlag(x: x, y: y)
+      let response = game.toggleFlag(x: x, y: y)
+      updateView(response: response)
     }
   }
   @IBAction func newGame(_ sender: UIButton) {
     viewDidLoad()
   }
   
-  // Invoked by Game
-  func updateView(r: Response) {
+  private func updateView(response: Response) {
     for i in 0...9 {
       for j in 0...9 {
-        map.setTileGroup(map.tileSet.tileGroups[r.textureMap[i][j]], forColumn: i, row: j)
+        map.setTileGroup(map.tileSet.tileGroups[response.textureMap[i][j]], forColumn: i, row: j)
       }
     }
-    if (r.status == -1) {
+    switch response.status {
+    case -1:
       statusMessage.text = "Game over!"
       statusMessage.isHidden = false
       playAgain.isHidden = false
-    } else if (r.status == 1) {
+    case 1:
       statusMessage.text = "You win!"
       statusMessage.isHidden = false
       playAgain.isHidden = false
-    } else {
-      statusMessage.isHidden = true
-      playAgain.isHidden = true
+    default:
+      break
     }
   }
 }
