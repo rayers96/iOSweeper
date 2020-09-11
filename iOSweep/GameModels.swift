@@ -13,19 +13,17 @@
 import UIKit
 
 enum Game {
-  enum Action {
-    struct Request {
-      var x: Int?
-      var y: Int?
-      var type: Int // 0 = get, 1 = flip, 2 = toggleFlag
-    }
-    struct Response {
-      var board: Board
-      var status: Int // -1 = loss, 0 = continue, 1 = win
-    }
-    struct ViewModel {
-      var textureMap: [[Int]]
-      var status: Int
-    }
+  struct Request {
+    var x: Int?
+    var y: Int?
+    var type: Int // 0 = get, 1 = flip, 2 = toggleFlag
+  }
+  struct Response {
+    var board: Board
+    var status: Int // -1 = loss, 0 = continue, 1 = win
+  }
+  struct ViewModel {
+    var textureMap: [[Int]]
+    var status: Int
   }
 }

@@ -13,15 +13,14 @@
 import UIKit
 
 protocol GamePresentationLogic {
-  func presentAction(response: Game.Action.Response)
+  func presentGame(response: Game.Response)
 }
 
 class GamePresenter: GamePresentationLogic {
   weak var viewController: GameDisplayLogic?
   
-  // MARK: Do something
-  
-  func presentAction(response: Game.Action.Response) {
+  // GamePresentationLogic Protocol
+  func presentGame(response: Game.Response) {
     let size = response.board.size
     var map = Array(repeating: Array(repeating: 9, count: size), count: size)
     for i in 0...size-1 {
@@ -38,7 +37,7 @@ class GamePresenter: GamePresentationLogic {
         }
       }
     }
-    let viewModel = Game.Action.ViewModel(textureMap: map, status: response.status)
-    viewController?.displayAction(viewModel: viewModel)
+    let viewModel = Game.ViewModel(textureMap: map, status: response.status)
+    viewController?.displayGame(viewModel: viewModel)
   }
 }

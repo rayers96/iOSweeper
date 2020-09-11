@@ -13,12 +13,12 @@
 import SpriteKit
 
 protocol GameDisplayLogic: class {
-  func displayAction(viewModel: Game.Action.ViewModel)
+  func displayGame(viewModel: Game.ViewModel)
 }
 
 class GameViewController: UIViewController, GameDisplayLogic {
   // CleanSwift Setup
-  var interactor: GameBusinessLogic?
+  private var interactor: GameBusinessLogic?
   private func setup() {
     let viewController = self
     let interactor = GameInteractor()
@@ -27,20 +27,16 @@ class GameViewController: UIViewController, GameDisplayLogic {
     interactor.presenter = presenter
     presenter.viewController = viewController
   }
-
-  // Declarations
   
-   private var scene: SKScene! = nil
-   private var map: SKTileMapNode! = nil
-  
-  @IBOutlet weak var skView: SKView!
-  @IBOutlet weak var statusMessage: UILabel!
-  @IBOutlet weak var playAgain: UIButton!
+  private var scene: SKScene! = nil
+  private var map: SKTileMapNode! = nil
+  @IBOutlet private weak var skView: SKView!
+  @IBOutlet private weak var statusMessage: UILabel!
+  @IBOutlet private weak var playAgain: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
-
     // Gesture Recognition
     let tapGesture = UITapGestureRecognizer(
       target: self,
@@ -52,45 +48,19 @@ class GameViewController: UIViewController, GameDisplayLogic {
       action: #selector(longPressed)
     )
     self.view.addGestureRecognizer(longGesture)
-  
-    // View setup
+    // Load scene
     scene = SKScene(fileNamed: "GameScene")!
     scene.scaleMode = .aspectFit
-    scene.isUserInteractionEnabled = true
     map = scene.childNode(withName: "//tileMap") as? SKTileMapNode
     statusMessage.isHidden = true
     playAgain.isHidden = true
     skView.presentScene(scene)
-    
-    // Get initial game
-    interactor?.doAction(request: Game.Action.Request(type: 0))
+    // Request initial game
+    interactor?.doGame(request: Game.Request(type: 0))
   }
   
-  // Handle user interaction
-  
-  @objc private func tapped(_ sender: UITapGestureRecognizer) {
-    let location = sender.location(in: skView)
-    let locationInScene = scene.convertPoint(fromView: location)
-    let x = map?.tileColumnIndex(fromPosition: locationInScene)
-    let y = map?.tileRowIndex(fromPosition: locationInScene)
-    interactor?.doAction(request: Game.Action.Request(x: x, y: y, type: 1))
-  }
-  @objc private func longPressed(_ sender: UILongPressGestureRecognizer) {
-    if (sender.state == UIGestureRecognizer.State.began) {
-      let location = sender.location(in: skView)
-      let locationInScene = scene.convertPoint(fromView: location)
-      let x = map?.tileColumnIndex(fromPosition: locationInScene)
-      let y = map?.tileRowIndex(fromPosition: locationInScene)
-    interactor?.doAction(request: Game.Action.Request(x: x, y: y, type: 2))
-    }
-  }
-  @IBAction private func newGame(_ sender: UIButton) {
-    viewDidLoad()
-  }
-  
-  // Action
-  
-  func displayAction(viewModel: Game.Action.ViewModel) {
+  // GameDisplayLogic Protocol
+  func displayGame(viewModel: Game.ViewModel) {
     for i in 0...9 {
       for j in 0...9 {
         map?.setTileGroup(map?.tileSet.tileGroups[viewModel.textureMap[i][j]], forColumn: i, row: j)
@@ -108,5 +78,26 @@ class GameViewController: UIViewController, GameDisplayLogic {
     default:
       break
     }
+  }
+  
+  // Handle user interaction
+  @objc private func tapped(_ sender: UITapGestureRecognizer) {
+    let location = sender.location(in: skView)
+    let locationInScene = scene.convertPoint(fromView: location)
+    let x = map?.tileColumnIndex(fromPosition: locationInScene)
+    let y = map?.tileRowIndex(fromPosition: locationInScene)
+    interactor?.doGame(request: Game.Request(x: x, y: y, type: 1))
+  }
+  @objc private func longPressed(_ sender: UILongPressGestureRecognizer) {
+    if (sender.state == UIGestureRecognizer.State.began) {
+      let location = sender.location(in: skView)
+      let locationInScene = scene.convertPoint(fromView: location)
+      let x = map?.tileColumnIndex(fromPosition: locationInScene)
+      let y = map?.tileRowIndex(fromPosition: locationInScene)
+      interactor?.doGame(request: Game.Request(x: x, y: y, type: 2))
+    }
+  }
+  @IBAction private func newGame(_ sender: UIButton) {
+    viewDidLoad()
   }
 }

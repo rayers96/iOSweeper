@@ -13,7 +13,7 @@
 import UIKit
 
 protocol GameBusinessLogic {
-  func doAction(request: Game.Action.Request)
+  func doGame(request: Game.Request)
 }
 
 class GameInteractor: GameBusinessLogic {
@@ -24,9 +24,8 @@ class GameInteractor: GameBusinessLogic {
   private var flips: Int = 0
   private var flags: Int = 0
   
-  // MARK: Do something
-  
-  func doAction(request: Game.Action.Request) {
+  // GameBusinessLogic Protocol
+  func doGame(request: Game.Request) {
     switch request.type {
     case 1:
       flip(x: request.x!, y: request.y!)
@@ -35,10 +34,10 @@ class GameInteractor: GameBusinessLogic {
     default:
       break
     }
-    presenter?.presentAction(response: Game.Action.Response(board: board, status: status))
+    presenter?.presentGame(response: Game.Response(board: board, status: status))
   }
   
-  // Local logic
+  // Game logic
   private func flip(x: Int, y: Int) {
     if (validateXY(x: x, y: y)) {
       if (board.b[x][y].mine) {
@@ -67,7 +66,7 @@ class GameInteractor: GameBusinessLogic {
     }
   }
 
-  // Helpers
+  // Game helpers
   private func validateXY(x: Int, y: Int) -> Bool {
     let validX = x >= 0 && x < board.size
     let validY = y >= 0 && y < board.size
