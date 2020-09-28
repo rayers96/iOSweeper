@@ -1,4 +1,4 @@
-# iOSweep 
+# iOSweeper
 Simple minesweeper implementation utilizing SKTileMapNode from SpriteKit to render the game interface - follows the Clean Swift architecture (https://clean-swift.com/)
 
 Implements dark and light mode functionality (new to iOS13) 
