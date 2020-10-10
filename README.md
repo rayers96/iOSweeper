@@ -9,5 +9,6 @@ This project will hopefully serve as a "playground" for learning iOS features so
 
 Screenshots:
 
-![Light mode screenshot]
-(/screenshots/light.png?raw=true)
+<img src=/screenshots/light.png width="256"> <img src=/screenshots/dark.png width="256">
+<br>
+<img src=/screenshots/loss.png width="256"> <img src=/screenshots/inprogress.png width="256">
